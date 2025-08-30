@@ -15,15 +15,18 @@ from os import getenv, path
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent # ../../.. = root
+BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent.parent # ../../../../ = root
 APPS_DIR = BASE_DIR / "core_apps"
 
-local_env_file = path.join(BASE_DIR, ".envs", ".env.local")
+local_env_file = BASE_DIR / ".envs" / ".env.local"
 
 if path.isfile(local_env_file):
     load_dotenv(local_env_file)
 
 ADMIN_URL = getenv('DJANGO_ADMIN_URL')
+
+print("Loading env from:", local_env_file)
+print("ADMIN_URL =", ADMIN_URL)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-&naym7&_&f5#5-1-4cood&7d-iq$ceai@yyo!v!qy27gcrwqw='
@@ -73,7 +76,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'dashboard.config.urls'
 
 TEMPLATES = [
     {
@@ -91,7 +94,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'dashboard.config.wsgi.application'
 
 
 # Database
