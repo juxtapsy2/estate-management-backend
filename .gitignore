@@ -23,4 +23,5 @@ downloads/
 eggs/
 .eggs/
 lib/
-venv
+venv/
+.venv/
