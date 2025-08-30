@@ -1,3 +1,26 @@
-.env*
+.vscode
+.idea
+.DS_Store
+staticfiles/
+.envs/*
+!.envs/.env.example
 
+# Byte compiled / optimized / DLL files
+__pycache__/
+*py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+
+# Distribution / Packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
 venv

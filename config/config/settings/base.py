@@ -18,9 +18,20 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent # ../../.. = root
 APPS_DIR = BASE_DIR / "core_apps"
 
+local_env_file = path.join(BASE_DIR, ".envs", ".env.local")
+
+if path.isfile(local_env_file):
+    load_dotenv(local_env_file)
+
+ADMIN_URL = getenv('DJANGO_ADMIN_URL')
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-&naym7&_&f5#5-1-4cood&7d-iq$ceai@yyo!v!qy27gcrwqw='
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
+DEBUG = True
 
 # Application definition
 
