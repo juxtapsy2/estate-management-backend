@@ -25,11 +25,8 @@ if path.isfile(local_env_file):
 
 ADMIN_URL = getenv('DJANGO_ADMIN_URL')
 
-print("Loading env from:", local_env_file)
-print("ADMIN_URL =", ADMIN_URL)
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&naym7&_&f5#5-1-4cood&7d-iq$ceai@yyo!v!qy27gcrwqw='
+SECRET_KEY = getenv('DJANGO_SECRET_KEY', "4MpLeAHYELTXeOm67HxINNR-zcLWPdwYonYJHZyjdc949KArjhE")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
