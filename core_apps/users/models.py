@@ -15,13 +15,13 @@ class User(AbstractUser):
     id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     first_name = models.CharField(verbose_name=_("First Name"), max_length=50)
     last_name = models.CharField(verbose_name=_("Last Name"), max_length=50)
-    email = models.EmailField(verbose_name=_("Email"), unique=True)
+    email = models.EmailField(verbose_name=_("Email"), unique=False, blank=True, null=True)
     db_index = True
     
     username = models.CharField(verbose_name=_("Username"), max_length=30, unique=True, validators=[UsernameValidator])
 
-    EMAIL_FIELD = "email"
-    USERNAME_FIELD = "email"
+    # Login fields
+    USERNAME_FIELD = "username"
 
     REQUIRED_FIELDS = [
         "first_name", "last_name",
