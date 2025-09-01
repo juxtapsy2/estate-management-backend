@@ -25,3 +25,39 @@ eggs/
 lib/
 venv/
 .venv/
+
+# Dependencies
+!client/src/lib
+client/node_modules
+client/.pnp
+client.pnp.js
+client.yarn/install-state.gz
+
+# Test
+client/coverage
+
+# Next.js
+client/.next/
+client/out/
+
+# Prod
+client/build/
+
+# MISC
+client/.DS_Store
+client*.pem
+
+# Debug
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+
+# .env files
+client/.env*.local
+
+# Vercel
+client/.vercel
+
+# TypeScript
+client/*.tsbuildinfo
+client/next-env.d.ts
